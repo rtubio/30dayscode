@@ -12,6 +12,7 @@ import sys
 
 def binstr2int(binary_string):
     """
+    UNNECESSARY, see int(string, base)
     This function converts a binary string into an integer number.
     @param binary_string - string that contains number in its binary representation
     """
@@ -30,10 +31,8 @@ def binstr2int(binary_string):
 
 for line in sys.stdin:
 
-    binary_strings = line.split(',')
-
     numbers = [
-        binstr2int(s) for s in binary_strings
+        int(s, 2) for s in line.split(',')
     ]
 
     print(f"{(numbers[0]+numbers[1]):b}")
